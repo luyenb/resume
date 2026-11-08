@@ -1,0 +1,453 @@
+<title>Brittani Luyen</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --bg: #F5F6F2;
+    --surface: #FFFFFF;
+    --ink: #16201B;
+    --ink-soft: #4B5850;
+    --ink-faint: #8B968E;
+    --line: #DCE3DC;
+    --accent: #0E6B5A;
+    --accent-ink: #0B5347;
+    --accent-soft: #E4F0EA;
+    --metric: #A8502B;
+    --shadow: 0 1px 2px rgba(22,32,27,0.04), 0 8px 24px rgba(22,32,27,0.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #0F1613;
+      --surface: #151F1A;
+      --ink: #ECEFEA;
+      --ink-soft: #B4C0B7;
+      --ink-faint: #76847B;
+      --line: #28342D;
+      --accent: #58DAB9;
+      --accent-ink: #DFFBF1;
+      --accent-soft: #1A332B;
+      --metric: #E79168;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #0F1613;
+    --surface: #151F1A;
+    --ink: #ECEFEA;
+    --ink-soft: #B4C0B7;
+    --ink-faint: #76847B;
+    --line: #28342D;
+    --accent: #58DAB9;
+    --accent-ink: #DFFBF1;
+    --accent-soft: #1A332B;
+    --metric: #E79168;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  *{ box-sizing: border-box; }
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+  ::selection{ background: var(--accent-soft); color: var(--accent-ink); }
+  a{ color: var(--accent-ink); text-decoration-color: var(--line); text-underline-offset: 3px; }
+  a:hover{ text-decoration-color: var(--accent); }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .mono{ font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+
+  .page{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 5rem;
+  }
+  @media (max-width: 560px){
+    .page{ padding: 3rem 1.25rem 3.5rem; }
+  }
+
+  /* ---- header ---- */
+  header{
+    animation: rise 0.5s ease-out both;
+  }
+  @media (prefers-reduced-motion: reduce){
+    header{ animation: none; }
+  }
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(6px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+  .name{
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 6vw, 3.4rem);
+    line-height: 1.05;
+    margin: 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .tagline{
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    max-width: 48ch;
+  }
+  .contact{
+    margin-top: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.9rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  .contact a{ color: var(--ink-soft); }
+  .contact a:hover{ color: var(--accent-ink); }
+  .contact span.sep{ color: var(--line); }
+
+  .pulse{
+    width: 100%;
+    height: 22px;
+    margin: 2rem 0 2.75rem;
+    display: block;
+    overflow: visible;
+  }
+  .pulse path{
+    fill: none;
+    stroke: var(--line);
+    stroke-width: 1.5;
+  }
+  .pulse path.beat{
+    stroke: var(--accent);
+    stroke-width: 1.75;
+  }
+
+  /* ---- sections ---- */
+  section{ margin-bottom: 2.75rem; }
+  section > h2{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 1.1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .summary{
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 1.1rem 1.3rem;
+  }
+  .summary ul{ margin: 0; padding: 0; list-style: none; }
+  .summary li{
+    position: relative;
+    padding-left: 1.1rem;
+    margin: 0 0 0.7rem;
+    font-size: 0.94rem;
+  }
+  .summary li:last-child{ margin-bottom: 0; }
+  .summary li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .role-block + .role-block{ margin-top: 1.5rem; }
+  .company{
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.65rem;
+  }
+  .role-row{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .role-title{
+    font-weight: 600;
+    font-size: 0.98rem;
+  }
+  .role-dates{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  ul.bullets{
+    margin: 0.55rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul.bullets li{
+    position: relative;
+    padding-left: 1.1rem;
+    margin: 0 0 0.55rem;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  ul.bullets li:last-child{ margin-bottom: 0; }
+  ul.bullets li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--ink-faint);
+  }
+  .metric{
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: var(--metric);
+    white-space: nowrap;
+  }
+  .company-roles{
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+  .stacked-titles{
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .edu-row{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .edu-degree{ font-weight: 600; font-size: 0.95rem; }
+  .edu-year{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+  .edu-minor{
+    margin: 0.3rem 0 0;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  .skills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .skill{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    padding: 0.4rem 0.7rem;
+    border-radius: 5px;
+  }
+
+  footer{
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  footer p{
+    margin: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+  }
+  .print-btn{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-soft);
+    padding: 0.5rem 0.85rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .print-btn:hover{ border-color: var(--accent); }
+
+  @media print{
+    body{ background: #fff; color: #111; }
+    .pulse, footer .print-btn{ display: none; }
+    .summary{ background: #f3f3f3; border-left-color: #999; }
+    .page{ padding: 0.5rem 0; max-width: none; }
+    a{ color: inherit; text-decoration: none; }
+  }
+</style>
+
+<div class="page">
+  <header>
+    <p class="eyebrow">Product Management — Healthcare &amp; LLM Platforms</p>
+    <h1 class="name">Brittani Luyen</h1>
+    <p class="tagline">Healthcare vertical platform PM shipping LLM-powered, API-first products across providers, payers, and healthcare operations.</p>
+    <p class="contact">
+      <a href="https://www.linkedin.com/in/brittaniluyen" target="_blank" rel="noopener">linkedin.com/in/brittaniluyen</a>
+    </p>
+  </header>
+
+  <svg class="pulse" viewBox="0 0 700 22" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,11 H260 L278,11 L288,2 L300,20 L312,11 L330,11 H700" class="beat" />
+  </svg>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <div class="summary">
+      <ul>
+        <li>Healthcare vertical platform PM turning complex healthcare administration into LLM-powered, API-first products with direct experience working at providers, payers, and healthcare operation services</li>
+        <li>At Medallion, defined the enterprise strategy from 0 to 1 and launched the API and channel-partner bets behind the company's <span class="metric">2</span> largest deals and <span class="metric">8 figures</span> in ARR; promoted within first year</li>
+        <li>Ships and prices LLM products in production, from an intake workflow running across <span class="metric">600k</span> providers to an AI outreach agent with <span class="metric">80%</span> adoption</li>
+        <li>Strong commercial foundation from Meta (<span class="metric">15+</span> ads products launched) and Elemy (promoted to GM in <span class="metric">9 months</span>, owning <span class="metric">20%</span> of revenue)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="role-block">
+      <div class="company">Medallion</div>
+      <div class="role-row">
+        <span class="role-title">Senior Product Manager, Platform</span>
+        <span class="role-dates">Sept 2025 – Present</span>
+      </div>
+      <ul class="bullets">
+        <li>Defined Medallion's enterprise product strategy from 0 to 1, prioritizing enterprise access controls, tools, and API investments that unblocked <span class="metric">$500M</span> in pipeline and drove <span class="metric">8 figures</span> in ARR (<span class="metric">30%</span> of 2026 new bookings)</li>
+        <li>Launched new reseller partner segment (EHRs, RCMs); own sizing, roadmap, GTM, and success definition &amp; instrumentation; grew it to <span class="metric">seven-figure</span> ARR, including Medallion's largest-ever deal</li>
+        <li>Shipped a developer-facing API and webhook platform for embedding credentialing in customers' systems; required for <span class="metric">2</span> largest deals in company history and drove <span class="metric">40%</span> faster onboarding for integrated customers</li>
+        <li>Launched an AI outreach agent (SMS and voice) and designed its tiered add-on pricing, packaging, and GTM; hit <span class="metric">127%</span> of launch target with <span class="metric">80%+</span> adoption and six figures in new ACV</li>
+        <li>Architected a closed-loop LLM system that detects manual work slowing credentialing, diffs missing payer requirements against platform config, and auto-updates the data model and config across <span class="metric">400+</span> payers; cut manual tasks <span class="metric">70%+</span> and time to submission <span class="metric">50%</span>, saving each customer <span class="metric">40 hrs/week</span></li>
+        <li>Built an LLM intake workflow that reconciles data for <span class="metric">600k</span> providers across CAQH, NPPES, and uploaded documents; it cut onboarding from <span class="metric">25 to 6 hours</span> with <span class="metric">95%+</span> of AI-merged fields accepted</li>
+      </ul>
+    </div>
+
+    <div class="role-block">
+      <div class="company">Oscar Health</div>
+      <div class="role-row">
+        <span class="role-title">Product Manager, Platform</span>
+        <span class="role-dates">Nov 2022 – Sept 2025</span>
+      </div>
+      <ul class="bullets">
+        <li>Built <a href="https://www.hioscar.ai/blog/claims-assistant" target="_blank" rel="noopener">Claims Assistant</a>, an AI tool for claims disputes, from hackathon win to production; increased tickets resolved per hour by <span class="metric">45%</span></li>
+        <li>Redesigned Oscar's internal claims operations tools, helping ops teams resolve tickets <span class="metric">25%</span> faster and cutting operational costs by <span class="metric">12%</span> of annual budget</li>
+        <li>Re-architected the overpayments service, data model, and tooling, reducing overpayment dollars by <span class="metric">22%</span> and increasing recovery volume <span class="metric">1.5x</span></li>
+      </ul>
+    </div>
+
+    <div class="role-block">
+      <div class="company">Elemy</div>
+      <div class="stacked-titles">
+        <div class="role-row">
+          <span class="role-title">General Manager</span>
+          <span class="role-dates">March 2022 – Aug 2022</span>
+        </div>
+        <div class="role-row">
+          <span class="role-title">Senior Manager, Marketplace Operations</span>
+          <span class="role-dates">June 2021 – March 2022</span>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li>Owned product roadmap for Elemy's Marketplace — launched 0 to 1 product that increased family/provider matches <span class="metric">73% Q/Q</span>, including defining business and product requirements, A/B testing, and GTM launch</li>
+        <li>Stood up a marketplace operations team, hiring and managing a team of <span class="metric">7</span> that exceeded growth goals by <span class="metric">30%</span> in Q4 2021 and set new records for highest number of matches in a month, three months in a row</li>
+        <li>Promoted to GM after <span class="metric">9 months</span>, owning a regional P&amp;L (<span class="metric">20%</span> of company revenue, <span class="metric">40%</span> of TAM)</li>
+      </ul>
+    </div>
+
+    <div class="role-block">
+      <div class="company">Meta</div>
+      <div class="company-roles">
+        <div>
+          <div class="role-row">
+            <span class="role-title">Product Operations Manager, New Products</span>
+            <span class="role-dates">April 2018 – May 2021</span>
+          </div>
+          <ul class="bullets">
+            <li>Managed launches for new digital ads products — launched <span class="metric">15+</span> products, including taking FB Stories ads from development to launch, garnering positive press and exceeding revenue goals its first quarter</li>
+            <li>Built cross-channel marketing plans to scale products through press, sales teams, and activations — launched creative workshop series for AR ads to address adoption challenges, which directly resulted in <span class="metric">$1.1M</span> in product revenue</li>
+          </ul>
+        </div>
+        <div>
+          <div class="role-row">
+            <span class="role-title">Marketing Associate, SMB</span>
+            <span class="role-dates">Sept 2015 – April 2018</span>
+          </div>
+          <ul class="bullets">
+            <li>Designed, tested, and scaled <span class="metric">$500M</span> digital advertising sales program that delivered <span class="metric">7%</span> revenue lift</li>
+            <li>Launched GTM strategies for marketing campaigns targeting <span class="metric">75M+</span> SMB advertisers, driving <span class="metric">4 of the top 10</span> performing campaigns of H2 2016 (of <span class="metric">50+</span> campaigns)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu-row">
+      <span class="edu-degree">B.S. in Biopsychology, University of California, Santa Barbara</span>
+      <span class="edu-year mono">2015</span>
+    </div>
+    <p class="edu-minor">Minor in Chemistry</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill">Large language models (LLMs)</span>
+      <span class="skill">LLM eval &amp; prompt design</span>
+      <span class="skill">Partner &amp; channel strategy</span>
+      <span class="skill">SQL</span>
+      <span class="skill">API platform &amp; webhook design</span>
+      <span class="skill">Pricing</span>
+      <span class="skill">Packaging</span>
+      <span class="skill">Go-to-market strategy</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>Updated November 2026</p>
+    <button class="print-btn" onclick="window.print()">Save as PDF</button>
+  </footer>
+</div>
